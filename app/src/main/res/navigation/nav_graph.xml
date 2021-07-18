@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menu_home">
+
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="com.anirudh.navigation.ui.fragments.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/menu_settings"
+        android:name="com.anirudh.navigation.ui.fragments.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" >
+
+        <!--enterAnim and exitAnim are animations used during the actions-->
+
+        <action
+            android:id="@+id/action_menu_settings_to_notificationSettingsFragment"
+            app:destination="@id/notificationSettingsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            />
+        <action
+            android:id="@+id/action_menu_settings_to_languageSettingsFragment"
+            app:destination="@id/languageSettingsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/menu_home"
+        android:name="com.anirudh.navigation.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/notificationSettingsFragment"
+        android:name="com.anirudh.navigation.ui.fragments.NotificationSettingsFragment"
+        android:label="Notification Settings" />
+    <fragment
+        android:id="@+id/languageSettingsFragment"
+        android:name="com.anirudh.navigation.ui.fragments.LanguageSettingsFragment"
+        android:label="Language Settings"
+        tools:layout="@layout/fragment_language_settings" />
+</navigation>
